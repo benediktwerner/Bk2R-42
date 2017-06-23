@@ -1,0 +1,26 @@
+{
+	"name": "Bk2R-42",
+	"version": "0.2",
+	"manifest_version": 2,
+	
+	"author": "Benedikt Werner",
+	"description": "Everything I need in chrome: Block YT Home Page, Setup TUM Player",
+	
+	"permissions": [
+		"tabs",
+		"storage",
+		"http://*/",
+		"https://*/"
+	],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [{
+		"matches": ["https://streams.tum.de/Mediasite/Play/*"],
+		"js": ["TUMPlayerSetup.js"]
+	}],
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	}
+}
