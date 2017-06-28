@@ -21,7 +21,7 @@ function setup() {
 	r.bind("contextmenu", function(e) {
 		e.preventDefault();
 		for (var i = 1; i < p.length; i++)
-			r.click();
+			$(".rate").click();
 	});
 	console.log("Finished");
 }
