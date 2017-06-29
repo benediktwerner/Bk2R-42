@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			setupYTButton(tabs[0]);
 		}
 		else if (tabs[0].url.match(/https?:\/\/streams\.tum\.de\/Mediasite\/Play\/*/)) {
-			setupTUMBUtton(tabs[0]);
+			setupTUMButton(tabs[0]);
 		}
 	});
 		
