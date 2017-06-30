@@ -26,5 +26,12 @@
 	"options_ui": {
 		"page": "options.html",
 		"chrome_style": true
+	},
+	"commands": {
+		"_execute_page_action": {
+			"suggested_key": {
+				"default": "Ctrl+Left"
+			}
+		}
 	}
 }
