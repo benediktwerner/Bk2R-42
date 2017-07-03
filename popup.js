@@ -32,12 +32,20 @@ function onYTClick(tab) {
 function setupTUMButton(tab) {
 	document.getElementById("yt").style.display = "none";
 	document.getElementById("tum").style.display = "block";
-	document.getElementById("tum-add-speed").onclick = function() {
-		var val = document.getElementById("tum-speed").value;
-		console.log(val);
-		chrome.tabs.executeScript(tabs[0].id, {
-			code: "var s=document.createElement('script');s.appendChild(document.createTextNode('Mediasite.MediaPlayer.ViewOptions.playbackRates.push("+val+");'));(document.body||document.head||document.documentElement).appendChild(s);"
-		});
-		window.close();
-	};
+	document.getElementById("tum-add-speed").onclick = function() {onTUMClick(tab);};
+	document.getElementById("tum-speed").addEventListener("keyup", function(e) {
+		e.preventDefault();
+		if (e.keyCode == 13)
+			onTUMClick(tab);
+	});
 }
+
+function onTUMClick(tab) {
+	var val = document.getElementById("tum-speed").value;
+	console.log(val);
+	chrome.tabs.executeScript(tab.id, {
+		code: "var s=document.createElement('script');s.appendChild(document.createTextNode('Mediasite.MediaPlayer.ViewOptions.playbackRates.push("+val+");'));(document.body||document.head||document.documentElement).appendChild(s);"
+	});
+	window.close();
+}
+
