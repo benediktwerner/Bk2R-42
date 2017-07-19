@@ -1,3 +1,3 @@
 ﻿alert("This is EVIL!");
-if (confirm("This page will now close!"))
+if (!confirm("Loading EVLI!"))
 	chrome.runtime.sendMessage("kill_tab");
