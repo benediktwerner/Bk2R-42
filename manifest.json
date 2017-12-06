@@ -4,34 +4,23 @@
 	"manifest_version": 2,
 	
 	"author": "Benedikt Werner",
-	"description": "Everything I need in chrome: Block YT Home Page, Setup TUM Player",
+	"description": "Everything I need in chrome: Setup TUM Player and hide notifications on click",
 	
 	"permissions": [
 		"tabs",
 		"storage",
+		"notifications",
 		"declarativeContent",
 		"http://*/",
 		"https://*/"
 	],
+	"browser_action": {
+	},
 	"background": {
 		"scripts": ["background.js"]
-	},
-	"page_action": {
-		"default_popup": "popup.html"
 	},
 	"content_scripts": [{
 		"matches": ["https://streams.tum.de/Mediasite/Play/*"],
 		"js": ["TUMPlayerSetup.js"]
-	}],
-	"options_ui": {
-		"page": "options.html",
-		"chrome_style": true
-	},
-	"commands": {
-		"_execute_page_action": {
-			"suggested_key": {
-				"default": "Ctrl+Left"
-			}
-		}
-	}
+	}]
 }
