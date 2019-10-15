@@ -12,8 +12,15 @@
 		"http://*/",
 		"https://*/"
 	],
-	"content_scripts": [{
-		"matches": ["https://streams.tum.de/Mediasite/Play/*"],
-		"js": ["TUMPlayerSetup.js"]
-	}]
+	"content_scripts": [
+		{
+			"matches": ["https://streams.tum.de/Mediasite/Play/*"],
+			"js": ["TUMPlayerSetup.js"]
+		},
+		{
+			"matches": ["https://www.biquge.com.cn/book/*"],
+			"css": ["biquge.css"],
+			"js": ["biquge.js"]
+		}
+	]
 }
